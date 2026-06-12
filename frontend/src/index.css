@@ -1,0 +1,93 @@
+@import "tailwindcss";
+
+/* ─── Design tokens (paper theme) ────────────────────────────────────────── */
+:root {
+  --bg: #f0e9da;
+  --paper: #f7f1e3;
+  --surface: #e8dfca;
+  --line: #d6cab0;
+  --line-soft: #e0d5bd;
+  --ink: #1d1812;
+  --ink-soft: #3a322a;
+  --muted: #7a6e5e;
+  --muted-2: #9d917f;
+  --accent: #b85a3e;        /* terracotta — spending */
+  --accent-2: #3a627a;      /* slate blue — income */
+  --accent-3: #6b8a5f;      /* sage — savings */
+  --hi: #d8a04a;            /* amber */
+  --pos: #3f6e57;           /* green: under budget / saving */
+  --neg: #8b3a37;           /* red: over budget */
+  --shadow: 0 1px 0 rgba(45, 32, 18, 0.06), 0 8px 24px -16px rgba(45, 32, 18, 0.18);
+}
+
+[data-theme="midnight"] {
+  --bg: #14110d;
+  --paper: #1b1813;
+  --surface: #221e18;
+  --line: #2f2a22;
+  --line-soft: #251f18;
+  --ink: #f1e8d6;
+  --ink-soft: #d6cbb6;
+  --muted: #8c826f;
+  --muted-2: #6e6655;
+  --accent: #d97a5a;
+  --accent-2: #6fa5c4;
+  --accent-3: #94b487;
+  --hi: #e8b765;
+  --pos: #5fa685;
+  --neg: #b04a47;
+  --shadow: 0 1px 0 rgba(0,0,0,0.4), 0 12px 32px -16px rgba(0,0,0,0.6);
+}
+
+/* ─── Reset + base ──────────────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: "DM Sans", system-ui, -apple-system, sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+button { font-family: inherit; }
+a { color: var(--accent); }
+::selection { background: var(--accent); color: var(--paper); }
+
+#root { min-height: 100vh; }
+
+/* ─── Typography classes ────────────────────────────────────────────────── */
+.serif {
+  font-family: "Spectral", "Iowan Old Style", Georgia, serif;
+  font-weight: 400;
+  letter-spacing: -0.005em;
+}
+
+.mono {
+  font-family: "JetBrains Mono", "SF Mono", ui-monospace, monospace;
+  font-feature-settings: "tnum", "zero";
+}
+
+.num {
+  font-family: "JetBrains Mono", "SF Mono", ui-monospace, monospace;
+  font-feature-settings: "tnum", "zero";
+  letter-spacing: -0.02em;
+}
+
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-size: 10.5px;
+  font-weight: 500;
+  color: var(--muted);
+}
+
+.rule      { height: 1px; background: var(--line); width: 100%; }
+.rule-soft { height: 1px; background: var(--line-soft); width: 100%; }
+
+*::-webkit-scrollbar        { width: 10px; height: 10px; }
+*::-webkit-scrollbar-thumb  { background: var(--line); border-radius: 6px; }
+*::-webkit-scrollbar-track  { background: transparent; }
