@@ -1,7 +1,7 @@
 import type {
   Transaction, MonthlyByCategory, IncomeVsSpendRow, CategoryTotal, MerchantTotal,
   Kpis, CategoryRule, MerchantAlias, IngestStatus, MomDelta, HighValueTxn, QuarterCompare,
-  RuleSuggestion,
+  RuleSuggestion, RecurringResponse,
 } from './types'
 
 const BASE = '/api'
@@ -84,4 +84,7 @@ export const api = {
   highValue: (params?: Params) => get<HighValueTxn[]>('/insights/high-value', params),
   quarterCompare: (year: number, quarter: number) =>
     get<QuarterCompare>('/insights/quarter-compare', { year, quarter }),
+
+  // Recurring
+  recurring: () => get<RecurringResponse>('/recurring'),
 }

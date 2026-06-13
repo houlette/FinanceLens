@@ -351,7 +351,7 @@ const iconBtn = {
 function Header() {
   return (
     <div style={{ marginBottom: 18 }}>
-      <div className="eyebrow" style={{ marginBottom: 6 }}>05 · Rules</div>
+      <div className="eyebrow" style={{ marginBottom: 6 }}>06 · Rules</div>
       <h1 className="serif" style={{ fontSize: 32, fontWeight: 400, color: 'var(--ink)', margin: 0, letterSpacing: '-0.015em' }}>
         Categorization rules
       </h1>

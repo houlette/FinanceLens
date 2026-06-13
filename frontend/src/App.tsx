@@ -5,13 +5,14 @@ import CategoriesView from './views/CategoriesView'
 import TransactionsView from './views/TransactionsView'
 import RulesView from './views/RulesView'
 import InsightsView from './views/InsightsView'
+import RecurringView from './views/RecurringView'
 import ImportView from './views/ImportView'
 
 const queryClient = new QueryClient({
   defaultOptions: { queries: { staleTime: 60_000, retry: 1 } },
 })
 
-type ViewId = 'dashboard' | 'categories' | 'transactions' | 'insights' | 'rules' | 'import'
+type ViewId = 'dashboard' | 'categories' | 'transactions' | 'insights' | 'recurring' | 'rules' | 'import'
 type Theme = 'paper' | 'midnight'
 
 const NAV: { id: ViewId; label: string; no: string }[] = [
@@ -19,8 +20,9 @@ const NAV: { id: ViewId; label: string; no: string }[] = [
   { id: 'categories',   label: 'Categories',   no: '02' },
   { id: 'transactions', label: 'Transactions', no: '03' },
   { id: 'insights',     label: 'Insights',     no: '04' },
-  { id: 'rules',        label: 'Rules',        no: '05' },
-  { id: 'import',       label: 'Import',       no: '06' },
+  { id: 'recurring',    label: 'Recurring',    no: '05' },
+  { id: 'rules',        label: 'Rules',        no: '06' },
+  { id: 'import',       label: 'Import',       no: '07' },
 ]
 
 export default function App() {
@@ -39,6 +41,7 @@ export default function App() {
           {view === 'categories'   && <CategoriesView initialCategory={pickedCategory} />}
           {view === 'transactions' && <TransactionsView />}
           {view === 'insights'     && <InsightsView />}
+          {view === 'recurring'    && <RecurringView />}
           {view === 'rules'        && <RulesView />}
           {view === 'import'       && <ImportView />}
         </main>

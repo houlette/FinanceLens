@@ -133,7 +133,7 @@ export default function ImportView() {
 function Header() {
   return (
     <div style={{ marginBottom: 18 }}>
-      <div className="eyebrow" style={{ marginBottom: 6 }}>06 · Import</div>
+      <div className="eyebrow" style={{ marginBottom: 6 }}>07 · Import</div>
       <h1 className="serif" style={{ fontSize: 32, fontWeight: 400, color: 'var(--ink)', margin: 0, letterSpacing: '-0.015em' }}>
         Import CSV statements
       </h1>

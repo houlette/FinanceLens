@@ -9,7 +9,7 @@ from fastapi.middleware.cors import CORSMiddleware
 
 from db.database import SessionLocal, init_db
 from ingest.seed_rules import seed_if_empty
-from routers import ingest, transactions, summaries, rules, insights
+from routers import ingest, transactions, summaries, rules, insights, recurring
 
 log = logging.getLogger("financelens")
 
@@ -30,6 +30,7 @@ app.include_router(transactions.router)
 app.include_router(summaries.router)
 app.include_router(rules.router)
 app.include_router(insights.router)
+app.include_router(recurring.router)
 
 
 @app.on_event("startup")

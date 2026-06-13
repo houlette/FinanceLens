@@ -92,6 +92,50 @@ export interface HighValueTxn {
   amount: number
 }
 
+export interface RecurringTxn {
+  id: number
+  date: string
+  amount: number               // magnitude; see series.direction for sign
+}
+
+export interface RecurringSeries {
+  key: string
+  merchant: string
+  category: string
+  bucket: 'bills' | 'income' | 'transfers'
+  direction: 'expense' | 'income'
+  cadence: string              // 'monthly', 'every 2 weeks', ...
+  period_days: number
+  count: number
+  first_date: string
+  last_date: string
+  typical_amount: number
+  last_amount: number
+  amount_min: number
+  amount_max: number
+  amount_type: 'fixed' | 'variable'
+  monthly_equivalent: number
+  status: 'active' | 'ended'
+  next_expected: string | null
+  confidence: number           // 0..1
+  conformity: number
+  missed: number
+  transactions: RecurringTxn[]
+}
+
+export interface RecurringResponse {
+  asof: string | null          // newest txn date — reference point for active/ended
+  summary: {
+    bills_monthly: number
+    bills_count: number
+    income_monthly: number
+    transfers_monthly: number
+    ended_recent: number
+    by_category: { category: string; monthly: number; count: number }[]
+  }
+  series: RecurringSeries[]
+}
+
 export interface QuarterCompare {
   current_label: string
   previous_label: string
