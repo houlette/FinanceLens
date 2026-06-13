@@ -18,7 +18,7 @@ app = FastAPI(title="FinanceLens API", version="0.1.0")
 app.add_middleware(
     CORSMiddleware,
     allow_origins=[
-        "http://localhost:5173", "http://localhost:5174", "http://localhost:4173",
+        "http://localhost:5230", "http://localhost:5235",  # dev + preview, per ~/Documents/Projects/PORTS.md
     ],
     allow_credentials=True,
     allow_methods=["*"],

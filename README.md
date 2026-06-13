@@ -32,11 +32,11 @@ python3 -m venv .venv
 # Frontend
 cd frontend && npm install && cd ..
 
-# Run both (backend :8000, frontend :5173)
+# Run both (backend :5231, frontend :5230 — see ~/Documents/Projects/PORTS.md)
 ./start.sh
 ```
 
-Then open http://localhost:5173 and upload a CSV on the Import view.
+Then open http://localhost:5230 and upload a CSV on the Import view.
 
 ### CSV format
 
